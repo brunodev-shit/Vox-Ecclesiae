@@ -1,0 +1,288 @@
+/* ==========================================================================
+   Vox Ecclesiae — folha de estilo
+   Inspirada em manuscritos iluminados, missais e a paleta litúrgica:
+   pergaminho, tinta ferrogálica, ouro velho e vermelho cardinalício.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+:root {
+    --parchment: #f2e9d8;
+    --parchment-dark: #e6d8b8;
+    --ink: #2b2118;
+    --burgundy: #6e1423;
+    --burgundy-dark: #4a0d18;
+    --gold: #b8862b;
+    --gold-light: #d9b667;
+    --navy: #1c2b44;
+
+    --font-display: 'Cinzel', serif;
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'EB Garamond', serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--parchment);
+    background-image:
+        radial-gradient(circle at 15% 20%, rgba(184, 134, 43, 0.05), transparent 45%),
+        radial-gradient(circle at 85% 75%, rgba(110, 20, 35, 0.04), transparent 50%);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: var(--burgundy);
+    text-decoration: none;
+}
+
+/* ---------- Cabeçalho ---------- */
+
+header {
+    background:
+        linear-gradient(180deg, var(--burgundy-dark), var(--burgundy) 12%, var(--burgundy) 88%, var(--burgundy-dark));
+    border-top: 6px solid var(--gold);
+    border-bottom: 6px solid var(--gold);
+    color: var(--parchment);
+    text-align: center;
+    padding: 2.75rem 1.5rem 1.75rem;
+}
+
+.header-ornament {
+    color: var(--gold-light);
+    font-size: 1.6rem;
+    margin-bottom: 0.4rem;
+}
+
+header h1 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(2.1rem, 5vw, 3.2rem);
+    letter-spacing: 0.09em;
+    margin: 0;
+    color: var(--parchment);
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+}
+
+.header-subtitle {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--gold-light);
+    margin: 0.35rem 0 1.75rem;
+    letter-spacing: 0.02em;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.65rem;
+    font-family: var(--font-display);
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+nav a {
+    color: var(--parchment);
+    padding: 0.35rem 0.2rem;
+    position: relative;
+    opacity: 0.88;
+    transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+nav a:not(:last-child)::after {
+    content: '\2726';
+    color: var(--gold);
+    font-size: 0.6rem;
+    margin-left: 0.65rem;
+    opacity: 0.8;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    color: var(--gold-light);
+    opacity: 1;
+}
+
+nav a.active {
+    opacity: 1;
+    color: var(--gold-light);
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 0.3rem;
+}
+
+nav a:focus-visible {
+    outline: 1px solid var(--gold-light);
+    outline-offset: 3px;
+}
+
+/* ---------- Conteúdo principal ---------- */
+
+main {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3.5rem 1.75rem 2rem;
+}
+
+.hero h2,
+.library h2 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 2rem;
+    color: var(--burgundy);
+    text-align: center;
+    margin: 0 0 1.5rem;
+}
+
+.hero h2::after,
+.library h2::after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 2px;
+    margin: 0.6rem auto 0;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.drop-cap {
+    font-size: 1.15rem;
+    color: #3a2c1c;
+}
+
+.drop-cap::first-letter {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 4.2rem;
+    float: left;
+    line-height: 0.78;
+    padding: 0.08em 0.09em 0 0.02em;
+    margin-right: 0.05em;
+    color: var(--burgundy);
+    text-shadow: 1px 1px 0 var(--gold-light);
+}
+
+/* ---------- Divisor ornamental ---------- */
+
+.divider {
+    display: flex;
+    justify-content: center;
+    margin: 3rem auto;
+    max-width: 260px;
+}
+
+.divider svg {
+    width: 100%;
+    height: 24px;
+    stroke: var(--gold);
+    fill: var(--gold);
+    stroke-width: 1;
+}
+
+/* ---------- Biblioteca ---------- */
+
+.library ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.1rem;
+}
+
+.library li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.35rem;
+    height: 100%;
+    padding: 1.75rem 1.1rem;
+    background: var(--parchment-dark);
+    border: 1px solid rgba(110, 20, 35, 0.18);
+    border-radius: 2px;
+    box-shadow: 0 2px 0 rgba(43, 33, 24, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.library li a:hover,
+.library li a:focus-visible {
+    transform: translateY(-3px);
+    border-color: var(--gold);
+    box-shadow: 0 6px 14px rgba(43, 33, 24, 0.14);
+}
+
+.library li a:focus-visible {
+    outline: 1px solid var(--burgundy);
+    outline-offset: 2px;
+}
+
+.library-icon {
+    font-size: 1.6rem;
+    color: var(--gold);
+    margin-bottom: 0.15rem;
+}
+
+.library-title {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: var(--burgundy);
+}
+
+.library-desc {
+    font-size: 0.92rem;
+    color: #5a4a36;
+    line-height: 1.4;
+}
+
+/* ---------- Rodapé ---------- */
+
+footer {
+    background: var(--navy);
+    color: var(--parchment-dark);
+    text-align: center;
+    padding: 1.5rem 1rem;
+    border-top: 3px solid var(--gold);
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 560px) {
+    .library ul {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        gap: 0.4rem 0.5rem;
+    }
+}
+
+/* ---------- Movimento reduzido ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .library li a {
+        transition: none;
+    }
+}
