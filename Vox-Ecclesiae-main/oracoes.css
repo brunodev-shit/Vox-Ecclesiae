@@ -1,0 +1,154 @@
+/* ==========================================================================
+   Vox Ecclesiae — oracoes.css
+   Estilos específicos da página de Orações.
+   Usa os mesmos tokens definidos em style.css (:root).
+   ========================================================================== */
+
+/* ---------- Seção Orações ---------- */
+
+.prayers h2 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 2rem;
+    color: var(--burgundy);
+    text-align: center;
+    margin: 0 0 1.75rem;
+}
+
+.prayers h2::after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 2px;
+    margin: 0.6rem auto 0;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+/* ---------- Lista de orações ---------- */
+
+.prayer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.prayer-card {
+    background: var(--parchment-dark);
+    border: 1px solid rgba(110, 20, 35, 0.18);
+    border-radius: 2px;
+    box-shadow: 0 2px 0 rgba(43, 33, 24, 0.06);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.prayer-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 6px 14px rgba(43, 33, 24, 0.1);
+}
+
+.prayer-card summary {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.1rem 1.4rem;
+    cursor: pointer;
+    font-family: var(--font-heading);
+    user-select: none;
+}
+
+.prayer-card summary::-webkit-details-marker {
+    display: none;
+}
+
+.prayer-card summary::after {
+    content: '\002B';
+    margin-left: auto;
+    color: var(--gold);
+    font-family: var(--font-body);
+    font-size: 1.3rem;
+    line-height: 1;
+    transition: transform 0.25s ease;
+}
+
+.prayer-card[open] summary::after {
+    content: '\2212';
+}
+
+.prayer-card summary:focus-visible {
+    outline: 1px solid var(--burgundy);
+    outline-offset: 3px;
+}
+
+.prayer-icon {
+    color: var(--gold);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.prayer-title {
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--burgundy);
+    letter-spacing: 0.01em;
+}
+
+.prayer-text {
+    padding: 0 1.4rem 1.4rem 3rem;
+    border-top: 1px solid rgba(110, 20, 35, 0.14);
+    color: #3a2c1c;
+    font-size: 1.05rem;
+}
+
+.prayer-text p {
+    margin: 1rem 0 0;
+}
+
+.prayer-text em {
+    color: var(--burgundy);
+    font-style: italic;
+}
+
+/* Pequena animação de abertura do conteúdo */
+.prayer-card[open] .prayer-text {
+    animation: unfold 0.25s ease;
+}
+
+@keyframes unfold {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 560px) {
+    .prayer-text {
+        padding-left: 1.4rem;
+    }
+
+    .prayer-title {
+        font-size: 1.1rem;
+    }
+}
+
+/* ---------- Movimento reduzido ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .prayer-card {
+        transition: none;
+    }
+
+    .prayer-card summary::after {
+        transition: none;
+    }
+
+    .prayer-card[open] .prayer-text {
+        animation: none;
+    }
+}
