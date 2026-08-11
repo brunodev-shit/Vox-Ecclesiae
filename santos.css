@@ -1,0 +1,852 @@
+/* ==========================================================================
+   Vox Ecclesiae — folha de estilo
+   Inspirada em manuscritos iluminados, missais e a paleta litúrgica:
+   pergaminho, tinta ferrogálica, ouro velho e vermelho cardinalício.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+:root {
+    --parchment: #f2e9d8;
+    --parchment-dark: #e6d8b8;
+    --ink: #2b2118;
+    --burgundy: #6e1423;
+    --burgundy-dark: #4a0d18;
+    --gold: #b8862b;
+    --gold-light: #d9b667;
+    --navy: #1c2b44;
+
+    --font-display: 'Cinzel', serif;
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'EB Garamond', serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--parchment);
+    background-image:
+        radial-gradient(circle at 15% 20%, rgba(184, 134, 43, 0.05), transparent 45%),
+        radial-gradient(circle at 85% 75%, rgba(110, 20, 35, 0.04), transparent 50%);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: var(--burgundy);
+    text-decoration: none;
+}
+
+/* ---------- Cabeçalho ---------- */
+
+header {
+    background:
+        linear-gradient(180deg, var(--burgundy-dark), var(--burgundy) 12%, var(--burgundy) 88%, var(--burgundy-dark));
+    border-top: 6px solid var(--gold);
+    border-bottom: 6px solid var(--gold);
+    color: var(--parchment);
+    text-align: center;
+    padding: 2.75rem 1.5rem 1.75rem;
+}
+
+.header-ornament {
+    color: var(--gold-light);
+    font-size: 1.6rem;
+    margin-bottom: 0.4rem;
+}
+
+header h1 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(2.1rem, 5vw, 3.2rem);
+    letter-spacing: 0.09em;
+    margin: 0;
+    color: var(--parchment);
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+}
+
+.header-subtitle {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--gold-light);
+    margin: 0.35rem 0 1.75rem;
+    letter-spacing: 0.02em;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.65rem;
+    font-family: var(--font-display);
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+nav a {
+    color: var(--parchment);
+    padding: 0.35rem 0.2rem;
+    position: relative;
+    opacity: 0.88;
+    transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+nav a:not(:last-child)::after {
+    content: '\2726';
+    color: var(--gold);
+    font-size: 0.6rem;
+    margin-left: 0.65rem;
+    opacity: 0.8;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    color: var(--gold-light);
+    opacity: 1;
+}
+
+nav a.active {
+    opacity: 1;
+    color: var(--gold-light);
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 0.3rem;
+}
+
+nav a:focus-visible {
+    outline: 1px solid var(--gold-light);
+    outline-offset: 3px;
+}
+
+/* ---------- Conteúdo principal ---------- */
+
+main {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3.5rem 1.75rem 2rem;
+}
+
+.hero h2,
+.library h2 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 2rem;
+    color: var(--burgundy);
+    text-align: center;
+    margin: 0 0 1.5rem;
+}
+
+.hero h2::after,
+.library h2::after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 2px;
+    margin: 0.6rem auto 0;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.drop-cap {
+    font-size: 1.15rem;
+    color: #3a2c1c;
+}
+
+.drop-cap::first-letter {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 4.2rem;
+    float: left;
+    line-height: 0.78;
+    padding: 0.08em 0.09em 0 0.02em;
+    margin-right: 0.05em;
+    color: var(--burgundy);
+    text-shadow: 1px 1px 0 var(--gold-light);
+}
+
+/* ---------- Divisor ornamental ---------- */
+
+.divider {
+    display: flex;
+    justify-content: center;
+    margin: 3rem auto;
+    max-width: 260px;
+}
+
+.divider svg {
+    width: 100%;
+    height: 24px;
+    stroke: var(--gold);
+    fill: var(--gold);
+    stroke-width: 1;
+}
+
+/* ---------- Biblioteca ---------- */
+
+.library ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.1rem;
+}
+
+.library li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.35rem;
+    height: 100%;
+    padding: 1.75rem 1.1rem;
+    background: var(--parchment-dark);
+    border: 1px solid rgba(110, 20, 35, 0.18);
+    border-radius: 2px;
+    box-shadow: 0 2px 0 rgba(43, 33, 24, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.library li a:hover,
+.library li a:focus-visible {
+    transform: translateY(-3px);
+    border-color: var(--gold);
+    box-shadow: 0 6px 14px rgba(43, 33, 24, 0.14);
+}
+
+.library li a:focus-visible {
+    outline: 1px solid var(--burgundy);
+    outline-offset: 2px;
+}
+
+.library-icon {
+    font-size: 1.6rem;
+    color: var(--gold);
+    margin-bottom: 0.15rem;
+}
+
+.library-title {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: var(--burgundy);
+}
+
+.library-desc {
+    font-size: 0.92rem;
+    color: #5a4a36;
+    line-height: 1.4;
+}
+
+/* ---------- Rodapé ---------- */
+
+footer {
+    background: var(--navy);
+    color: var(--parchment-dark);
+    text-align: center;
+    padding: 1.5rem 1rem;
+    border-top: 3px solid var(--gold);
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 560px) {
+    .library ul {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        gap: 0.4rem 0.5rem;
+    }
+}
+
+/* ---------- Movimento reduzido ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .library li a {
+        transition: none;
+    }
+}
+/* ==========================================================================
+   Vox Ecclesiae — folha de estilo
+   Inspirada em manuscritos iluminados, missais e a paleta litúrgica:
+   pergaminho, tinta ferrogálica, ouro velho e vermelho cardinalício.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+:root {
+    --parchment: #f2e9d8;
+    --parchment-dark: #e6d8b8;
+    --ink: #2b2118;
+    --burgundy: #6e1423;
+    --burgundy-dark: #4a0d18;
+    --gold: #b8862b;
+    --gold-light: #d9b667;
+    --navy: #1c2b44;
+
+    --font-display: 'Cinzel', serif;
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'EB Garamond', serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--parchment);
+    background-image:
+        radial-gradient(circle at 15% 20%, rgba(184, 134, 43, 0.05), transparent 45%),
+        radial-gradient(circle at 85% 75%, rgba(110, 20, 35, 0.04), transparent 50%);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: var(--burgundy);
+    text-decoration: none;
+}
+
+/* ---------- Cabeçalho ---------- */
+
+header {
+    background:
+        linear-gradient(180deg, var(--burgundy-dark), var(--burgundy) 12%, var(--burgundy) 88%, var(--burgundy-dark));
+    border-top: 6px solid var(--gold);
+    border-bottom: 6px solid var(--gold);
+    color: var(--parchment);
+    text-align: center;
+    padding: 2.75rem 1.5rem 1.75rem;
+}
+
+.header-ornament {
+    color: var(--gold-light);
+    font-size: 1.6rem;
+    margin-bottom: 0.4rem;
+}
+
+header h1 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(2.1rem, 5vw, 3.2rem);
+    letter-spacing: 0.09em;
+    margin: 0;
+    color: var(--parchment);
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+}
+
+.header-subtitle {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--gold-light);
+    margin: 0.35rem 0 1.75rem;
+    letter-spacing: 0.02em;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.65rem;
+    font-family: var(--font-display);
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+nav a {
+    color: var(--parchment);
+    padding: 0.35rem 0.2rem;
+    position: relative;
+    opacity: 0.88;
+    transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+nav a:not(:last-child)::after {
+    content: '\2726';
+    color: var(--gold);
+    font-size: 0.6rem;
+    margin-left: 0.65rem;
+    opacity: 0.8;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    color: var(--gold-light);
+    opacity: 1;
+}
+
+nav a.active {
+    opacity: 1;
+    color: var(--gold-light);
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 0.3rem;
+}
+
+nav a:focus-visible {
+    outline: 1px solid var(--gold-light);
+    outline-offset: 3px;
+}
+
+/* ---------- Conteúdo principal ---------- */
+
+main {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3.5rem 1.75rem 2rem;
+}
+
+.hero h2,
+.library h2 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 2rem;
+    color: var(--burgundy);
+    text-align: center;
+    margin: 0 0 1.5rem;
+}
+
+.hero h2::after,
+.library h2::after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 2px;
+    margin: 0.6rem auto 0;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.drop-cap {
+    font-size: 1.15rem;
+    color: #3a2c1c;
+}
+
+.drop-cap::first-letter {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 4.2rem;
+    float: left;
+    line-height: 0.78;
+    padding: 0.08em 0.09em 0 0.02em;
+    margin-right: 0.05em;
+    color: var(--burgundy);
+    text-shadow: 1px 1px 0 var(--gold-light);
+}
+
+/* ---------- Divisor ornamental ---------- */
+
+.divider {
+    display: flex;
+    justify-content: center;
+    margin: 3rem auto;
+    max-width: 260px;
+}
+
+.divider svg {
+    width: 100%;
+    height: 24px;
+    stroke: var(--gold);
+    fill: var(--gold);
+    stroke-width: 1;
+}
+
+/* ---------- Biblioteca ---------- */
+
+.library ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.1rem;
+}
+
+.library li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.35rem;
+    height: 100%;
+    padding: 1.75rem 1.1rem;
+    background: var(--parchment-dark);
+    border: 1px solid rgba(110, 20, 35, 0.18);
+    border-radius: 2px;
+    box-shadow: 0 2px 0 rgba(43, 33, 24, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.library li a:hover,
+.library li a:focus-visible {
+    transform: translateY(-3px);
+    border-color: var(--gold);
+    box-shadow: 0 6px 14px rgba(43, 33, 24, 0.14);
+}
+
+.library li a:focus-visible {
+    outline: 1px solid var(--burgundy);
+    outline-offset: 2px;
+}
+
+.library-icon {
+    font-size: 1.6rem;
+    color: var(--gold);
+    margin-bottom: 0.15rem;
+}
+
+.library-title {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: var(--burgundy);
+}
+
+.library-desc {
+    font-size: 0.92rem;
+    color: #5a4a36;
+    line-height: 1.4;
+}
+
+/* ---------- Rodapé ---------- */
+
+footer {
+    background: var(--navy);
+    color: var(--parchment-dark);
+    text-align: center;
+    padding: 1.5rem 1rem;
+    border-top: 3px solid var(--gold);
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 560px) {
+    .library ul {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        gap: 0.4rem 0.5rem;
+    }
+}
+
+/* ---------- Movimento reduzido ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .library li a {
+        transition: none;
+    }
+}
+
+/* ==========================================================================
+   Seção Santos — hub, cartões de galeria e página individual do santo
+   ========================================================================== */
+
+/* ---------- Trilha de navegação ---------- */
+
+.breadcrumb {
+    display: block;
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--burgundy);
+    opacity: 0.75;
+    margin: 0 0 2rem;
+}
+
+.breadcrumb a {
+    color: var(--burgundy);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.breadcrumb a:hover,
+.breadcrumb a:focus-visible {
+    border-color: var(--gold);
+    opacity: 1;
+}
+
+/* ---------- Galeria de santos (hub santos.html) ---------- */
+
+.saints-intro {
+    text-align: center;
+    max-width: 62ch;
+    margin: 0 auto 2.75rem;
+    color: #4a3a28;
+}
+
+.saints-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.4rem 1.1rem;
+}
+
+.saint-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    padding: 1.6rem 1.1rem 1.4rem;
+    background: var(--parchment-dark);
+    border: 1px solid rgba(110, 20, 35, 0.18);
+    border-radius: 2px;
+    box-shadow: 0 2px 0 rgba(43, 33, 24, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.saint-card:hover,
+.saint-card:focus-visible {
+    transform: translateY(-3px);
+    border-color: var(--gold);
+    box-shadow: 0 6px 14px rgba(43, 33, 24, 0.14);
+}
+
+.saint-card:focus-visible {
+    outline: 1px solid var(--burgundy);
+    outline-offset: 3px;
+}
+
+.saint-card-photo {
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 15%;
+    border: 3px solid var(--gold);
+    box-shadow: 0 0 0 3px var(--parchment), 0 3px 8px rgba(43, 33, 24, 0.25);
+    margin-bottom: 0.85rem;
+}
+
+.saint-card-name {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--burgundy);
+    line-height: 1.25;
+}
+
+.saint-card-feast {
+    font-family: var(--font-display);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0.3rem 0 0.5rem;
+}
+
+.saint-card-desc {
+    font-size: 0.9rem;
+    color: #5a4a36;
+    line-height: 1.45;
+}
+
+/* ---------- Cabeçalho da página individual do santo ---------- */
+
+.saint-hero {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.saint-portrait-frame {
+    flex: 0 0 auto;
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    padding: 4px;
+    background: linear-gradient(145deg, var(--gold-light), var(--gold) 55%, var(--burgundy));
+    box-shadow: 0 4px 12px rgba(43, 33, 24, 0.25);
+}
+
+.saint-portrait {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 18%;
+    border: 3px solid var(--parchment);
+    display: block;
+}
+
+.saint-hero-text h2 {
+    text-align: left;
+    margin: 0 0 0.5rem;
+}
+
+.saint-hero-text h2::after {
+    margin: 0.6rem 0 0;
+}
+
+.saint-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.saint-tag {
+    font-family: var(--font-display);
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--burgundy-dark);
+    background: rgba(184, 134, 43, 0.14);
+    border: 1px solid rgba(184, 134, 43, 0.4);
+    border-radius: 2px;
+    padding: 0.3rem 0.55rem;
+}
+
+@media (max-width: 560px) {
+    .saint-hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .saint-hero-text h2 {
+        text-align: center;
+    }
+
+    .saint-hero-text h2::after {
+        margin: 0.6rem auto 0;
+    }
+
+    .saint-tags {
+        justify-content: center;
+    }
+
+    .saints-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ---------- Seções de conteúdo do santo ---------- */
+
+main section {
+    margin-bottom: 2.25rem;
+}
+
+main section h3 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1.45rem;
+    color: var(--burgundy-dark);
+    border-bottom: 1px solid rgba(110, 20, 35, 0.2);
+    padding-bottom: 0.4rem;
+    margin: 0 0 0.85rem;
+}
+
+/* ---------- Cartão de oração ---------- */
+
+.prayer-card {
+    background: var(--parchment-dark);
+    border: 1px solid rgba(184, 134, 43, 0.45);
+    border-left: 4px solid var(--burgundy);
+    border-radius: 2px;
+    padding: 0.25rem 1.4rem;
+    margin: 2.5rem 0;
+}
+
+.prayer-card summary {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    list-style: none;
+    cursor: pointer;
+    padding: 1.1rem 0;
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--burgundy-dark);
+}
+
+.prayer-card summary::-webkit-details-marker {
+    display: none;
+}
+
+.prayer-icon {
+    flex: 0 0 auto;
+    width: 1.6rem;
+    height: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-size: 1rem;
+    line-height: 1;
+    transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.prayer-card[open] .prayer-icon {
+    transform: rotate(45deg);
+    background: var(--burgundy);
+    color: var(--parchment);
+}
+
+.prayer-title {
+    flex: 1 1 auto;
+}
+
+.prayer-text {
+    padding: 0 0 1.5rem;
+    border-top: 1px solid rgba(110, 20, 35, 0.15);
+}
+
+.prayer-text p {
+    margin: 1.1rem 0 0;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: #3a2c1c;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .prayer-icon {
+        transition: none;
+    }
+}

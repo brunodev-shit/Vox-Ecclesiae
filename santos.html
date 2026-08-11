@@ -2,108 +2,676 @@
 <html lang="pt-BR">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Sancti</title>
-
-    <link rel="stylesheet" href="style.css">
-
+    <title>Vida dos Santos &mdash; Vox Ecclesiae</title>
+    <link rel="stylesheet" href="santos.css">
 </head>
 
 <body>
+
 <header>
-
-Vida dos Santos    
-
+    <div class="header-ornament">&#10022;</div>
+    <h1>Vox Ecclesiae</h1>
+    <p class="header-subtitle">Vida dos Santos</p>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="biblia.html">Bíblia</a>
+        <a href="oracoes.html">Orações</a>
+        <a href="santos.html" class="active">Santos</a>
+        <a href="catecismo.html">Catecismo</a>
+    </nav>
 </header>
 
-<main>
+<main id="topo">
 
-    <h2>São Miguel Arcanjo</h2>
+    <div class="library">
+        <h2>Vida dos Santos</h2>
 
-    <p>
-        Conheça a história e a devoção a São Miguel Arcanjo,
-        príncipe da milícia celeste e defensor da Igreja.
-
-    </p>
-
-
-<section>
-
-    <h3>Quem é São Miguel Arcanjo</h3>
-
-    <p>
-       São Miguel Arcanjo é um dos três arcanjos mencionados pelo nome
-        nas Sagradas Escrituras. É apresentado como defensor do povo de Deus
-        e vencedor na batalha contra o mal.
-</p>
-
-
-
-
-
-</section>
-
-<section>
-
-       <h3>São Miguel nas Sagradas Escrituras</h3>
-
-    <p>
-      São Miguel Arcanjo é mencionado pelo nome no livro de Daniel,
-        na Carta de São Judas e no Apocalipse.
-    </p>   
-    <p>
-     No livro de Daniel, Miguel é apresentado como um grande príncipe
-        que protege o povo de Deus. Na Carta de São Judas, ele aparece
-        disputando com o diabo pelo corpo de Moisés. No Apocalipse,
-        Miguel e seus anjos combatem o dragão, identificado como a antiga
-        serpente, o diabo e Satanás.
-</p>
-
-</section>
-
-<details class="prayer-card">
-
-    <summary>
-     <span class="prayer-icon" aria-hidden="true">+</span>
-     <span class="prayer-title">Oração a São Miguel Aranjo</span>
-    </summary>
-    
-    
-    <div class="prayer-text">
-
-       <p>
-        São Miguel Arcanjo, defendei-nos no combate;
-            sede nosso refúgio contra as maldades e ciladas do demônio.
-            Ordene-lhe Deus, instantemente o pedimos;
-            e vós, príncipe da milícia celeste,
-            pelo poder de Deus, precipitai no inferno a Satanás
-            e aos outros espíritos malignos
-            que andam pelo mundo para perder as almas.
-
-            Amém.
+        <p class="saints-intro">
+            Conheça a história, a devoção e as orações de alguns dos santos mais venerados pela
+            Igreja Católica ao longo dos séculos. Toque em um santo para ler sua história.
         </p>
 
-
+        <ul class="saints-grid">
+            <li>
+                <a class="saint-card" href="#sao-miguel-arcanjo">
+                    <img class="saint-card-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/GuidoReni_MichaelDefeatsSatan.jpg?width=600" alt="São Miguel Arcanjo pisando o demônio, pintura de Guido Reni" loading="lazy">
+                    <span class="saint-card-name">São Miguel Arcanjo</span>
+                    <span class="saint-card-feast">29 de setembro</span>
+                    <span class="saint-card-desc">Defensor do povo de Deus e vencedor na batalha contra o mal.</span>
+                </a>
+            </li>
+            <li>
+                <a class="saint-card" href="#sao-jose">
+                    <img class="saint-card-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Guido_Reni_-_St_Joseph_with_the_Infant_Jesus_-_WGA19304.jpg?width=600" alt="São José com o Menino Jesus, pintura de Guido Reni" loading="lazy">
+                    <span class="saint-card-name">São José</span>
+                    <span class="saint-card-feast">19 de março</span>
+                    <span class="saint-card-desc">O guardião fiel, esposo de Maria e pai adotivo de Jesus.</span>
+                </a>
+            </li>
+            <li>
+                <a class="saint-card" href="#sao-pedro">
+                    <img class="saint-card-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Pope-peter_pprubens.jpg?width=600" alt="O Apóstolo São Pedro, pintura de Peter Paul Rubens" loading="lazy">
+                    <span class="saint-card-name">São Pedro</span>
+                    <span class="saint-card-feast">29 de junho</span>
+                    <span class="saint-card-desc">Pescador da Galileia, chamado por Jesus para ser pedra da Igreja.</span>
+                </a>
+            </li>
+            <li>
+                <a class="saint-card" href="#sao-paulo">
+                    <img class="saint-card-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/El_Greco_-_Apostle_St_Paul_-_WGA10603.jpg?width=600" alt="O Apóstolo São Paulo, pintura de El Greco" loading="lazy">
+                    <span class="saint-card-name">São Paulo</span>
+                    <span class="saint-card-feast">29 de junho</span>
+                    <span class="saint-card-desc">De perseguidor da Igreja a maior missionário do Evangelho.</span>
+                </a>
+            </li>
+            <li>
+                <a class="saint-card" href="#santo-antonio-de-padua">
+                    <img class="saint-card-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Heiliger_Antonius_mit_dem_Christuskind.jpg?width=600" alt="Santo Antônio de Pádua com o Menino Jesus" loading="lazy">
+                    <span class="saint-card-name">Santo Antônio de Pádua</span>
+                    <span class="saint-card-feast">13 de junho</span>
+                    <span class="saint-card-desc">Frade franciscano de eloquência célebre, amigo dos pobres e dos aflitos.</span>
+                </a>
+            </li>
+            <li>
+                <a class="saint-card" href="#sao-francisco-de-assis">
+                    <img class="saint-card-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/El_Greco_-_Saint_Francis_in_ecstasy_-_Google_Art_Project.jpg?width=600" alt="São Francisco de Assis em êxtase, pintura de El Greco" loading="lazy">
+                    <span class="saint-card-name">São Francisco de Assis</span>
+                    <span class="saint-card-feast">4 de outubro</span>
+                    <span class="saint-card-desc">O filho rico que abraçou a pobreza e a irmandade com toda a criação.</span>
+                </a>
+            </li>
+            <li>
+                <a class="saint-card" href="#santa-teresinha-do-menino-jesus">
+                    <img class="saint-card-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Sainte_therese_de_lisieux.jpg?width=600" alt="Santa Teresa de Lisieux, fotografia de época" loading="lazy">
+                    <span class="saint-card-name">Santa Teresinha do Menino Jesus</span>
+                    <span class="saint-card-feast">1º de outubro</span>
+                    <span class="saint-card-desc">A pequena via da confiança e do amor, em meio à simplicidade do dia a dia.</span>
+                </a>
+            </li>
+            <li>
+                <a class="saint-card" href="#sao-judas-tadeu">
+                    <img class="saint-card-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/El_Greco_-_Apostle_St_Thaddeus_(Jude)_-_WGA10601.jpg?width=600" alt="O Apóstolo São Judas Tadeu, pintura de El Greco" loading="lazy">
+                    <span class="saint-card-name">São Judas Tadeu</span>
+                    <span class="saint-card-feast">28 de outubro</span>
+                    <span class="saint-card-desc">Um dos Doze, hoje um dos santos mais invocados nas horas de aflição.</span>
+                </a>
+            </li>
+            <li>
+                <a class="saint-card" href="#santa-rita-de-cassia">
+                    <img class="saint-card-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Santa_Rita_da_Cascia.jpg?width=600" alt="Santa Rita de Cássia, pintura tradicional" loading="lazy">
+                    <span class="saint-card-name">Santa Rita de Cássia</span>
+                    <span class="saint-card-feast">22 de maio</span>
+                    <span class="saint-card-desc">Esposa, mãe, viúva e freira agostiniana, marcada por sofrimentos e perdão.</span>
+                </a>
+            </li>
+            <li>
+                <a class="saint-card" href="#sao-jorge">
+                    <img class="saint-card-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Raphael_-_Saint_George_Fighting_the_Dragon.jpg?width=600" alt="São Jorge e o dragão, pintura de Rafael" loading="lazy">
+                    <span class="saint-card-name">São Jorge</span>
+                    <span class="saint-card-feast">23 de abril</span>
+                    <span class="saint-card-desc">Soldado romano e mártir, celebrado pela lenda do combate ao dragão.</span>
+                </a>
+            </li>
+        </ul>
     </div>
 
-    </details>
+    <div class="divider">
+        <svg viewBox="0 0 260 24" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="12" x2="105" y2="12" />
+            <circle cx="130" cy="12" r="5" />
+            <line x1="155" y1="12" x2="260" y2="12" />
+        </svg>
+    </div>
+
+    <article class="saint-article" id="sao-miguel-arcanjo">
+
+        <p class="breadcrumb"><a href="#topo">&uarr; Vida dos Santos</a></p>
+
+        <div class="saint-hero">
+            <div class="saint-portrait-frame">
+                <img class="saint-portrait" src="https://commons.wikimedia.org/wiki/Special:FilePath/GuidoReni_MichaelDefeatsSatan.jpg?width=600" alt="São Miguel Arcanjo pisando o demônio, pintura de Guido Reni" loading="lazy">
+            </div>
+            <div class="saint-hero-text">
+                <h2>São Miguel Arcanjo</h2>
+                <div class="saint-tags">
+                <span class="saint-tag">Príncipe da Milícia Celeste</span>
+                <span class="saint-tag">Padroeiro dos policiais</span>
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <h3>Quem é São Miguel Arcanjo</h3>
+<p class="drop-cap">São Miguel Arcanjo é um dos três arcanjos mencionados pelo nome nas Sagradas Escrituras. É apresentado como defensor do povo de Deus e vencedor na batalha contra o mal.</p>
+        </section>
+
+        <div class="divider">
+        <svg viewBox="0 0 260 24" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="12" x2="105" y2="12" />
+            <circle cx="130" cy="12" r="5" />
+            <line x1="155" y1="12" x2="260" y2="12" />
+        </svg>
+    </div>
+
+        <section>
+            <h3>São Miguel nas Sagradas Escrituras</h3>
+<p>São Miguel Arcanjo é mencionado pelo nome no livro de Daniel, na Carta de São Judas e no Apocalipse.</p><p>No livro de Daniel, Miguel é apresentado como um grande príncipe que protege o povo de Deus. Na Carta de São Judas, ele aparece disputando com o diabo pelo corpo de Moisés. No Apocalipse, Miguel e seus anjos combatem o dragão, identificado como a antiga serpente, o diabo e Satanás.</p>
+        </section>
+
+        <details class="prayer-card">
+            <summary>
+                <span class="prayer-icon" aria-hidden="true">+</span>
+                <span class="prayer-title">Oração a São Miguel Arcanjo</span>
+            </summary>
+            <div class="prayer-text">
+<p>São Miguel Arcanjo, defendei-nos no combate; sede nosso refúgio contra as maldades e ciladas do demônio. Ordene-lhe Deus, instantemente o pedimos; e vós, príncipe da milícia celeste, pelo poder de Deus, precipitai no inferno a Satanás e aos outros espíritos malignos que andam pelo mundo para perder as almas.</p><p>Amém.</p>
+            </div>
+        </details>
+
+    </article>
+
+    <div class="divider">
+        <svg viewBox="0 0 260 24" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="12" x2="105" y2="12" />
+            <circle cx="130" cy="12" r="5" />
+            <line x1="155" y1="12" x2="260" y2="12" />
+        </svg>
+    </div>
+
+    <article class="saint-article" id="sao-jose">
+
+        <p class="breadcrumb"><a href="#topo">&uarr; Vida dos Santos</a></p>
+
+        <div class="saint-hero">
+            <div class="saint-portrait-frame">
+                <img class="saint-portrait" src="https://commons.wikimedia.org/wiki/Special:FilePath/Guido_Reni_-_St_Joseph_with_the_Infant_Jesus_-_WGA19304.jpg?width=600" alt="São José com o Menino Jesus, pintura de Guido Reni" loading="lazy">
+            </div>
+            <div class="saint-hero-text">
+                <h2>São José</h2>
+                <div class="saint-tags">
+                <span class="saint-tag">Esposo de Nossa Senhora</span>
+                <span class="saint-tag">Padroeiro da Igreja Universal</span>
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <h3>Quem é São José</h3>
+<p class="drop-cap">São José foi o esposo de Nossa Senhora e pai adotivo de Jesus Cristo. Descendente da linhagem de Davi, é lembrado pela Igreja como o "varão justo" que acolheu Maria e o Menino mesmo diante do mistério que não compreendia por completo.</p>
+        </section>
+
+        <div class="divider">
+        <svg viewBox="0 0 260 24" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="12" x2="105" y2="12" />
+            <circle cx="130" cy="12" r="5" />
+            <line x1="155" y1="12" x2="260" y2="12" />
+        </svg>
+    </div>
+
+        <section>
+            <h3>São José nas Sagradas Escrituras</h3>
+<p>Os Evangelhos de Mateus e Lucas narram episódios centrais de sua vida: o anúncio do anjo em sonho, a fuga para o Egito para proteger o Menino Jesus de Herodes, e o retorno a Nazaré, onde exerceu o ofício de carpinteiro.</p><p>José não pronuncia nenhuma palavra registrada nas Escrituras, mas sua obediência silenciosa e pronta a cada chamado de Deus fez dele modelo de fé e de trabalho honesto para a Igreja.</p>
+        </section>
+
+        <details class="prayer-card">
+            <summary>
+                <span class="prayer-icon" aria-hidden="true">+</span>
+                <span class="prayer-title">Oração a São José</span>
+            </summary>
+            <div class="prayer-text">
+<p>Glorioso São José, modelo de todos aqueles que se dedicam ao trabalho, alcançai-me a graça de trabalhar em espírito de penitência, para assim alcançar a redenção de minhas faltas; de trabalhar com consciência, colocando o dever acima das minhas inclinações; de trabalhar com gratidão e alegria, considerando uma honra empregar e desenvolver, pelo trabalho, os dons recebidos de Deus.</p><p>Amém.</p>
+            </div>
+        </details>
+
+    </article>
+
+    <div class="divider">
+        <svg viewBox="0 0 260 24" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="12" x2="105" y2="12" />
+            <circle cx="130" cy="12" r="5" />
+            <line x1="155" y1="12" x2="260" y2="12" />
+        </svg>
+    </div>
+
+    <article class="saint-article" id="sao-pedro">
+
+        <p class="breadcrumb"><a href="#topo">&uarr; Vida dos Santos</a></p>
+
+        <div class="saint-hero">
+            <div class="saint-portrait-frame">
+                <img class="saint-portrait" src="https://commons.wikimedia.org/wiki/Special:FilePath/Pope-peter_pprubens.jpg?width=600" alt="O Apóstolo São Pedro, pintura de Peter Paul Rubens" loading="lazy">
+            </div>
+            <div class="saint-hero-text">
+                <h2>São Pedro</h2>
+                <div class="saint-tags">
+                <span class="saint-tag">Príncipe dos Apóstolos</span>
+                <span class="saint-tag">Primeiro Papa</span>
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <h3>Quem é São Pedro</h3>
+<p class="drop-cap">Simão, chamado por Jesus de Pedro ("pedra"), era um pescador da Galileia que se tornou o primeiro entre os Apóstolos. A tradição da Igreja o reconhece como o primeiro Bispo de Roma, fundamento visível da unidade da Igreja.</p>
+        </section>
+
+        <div class="divider">
+        <svg viewBox="0 0 260 24" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="12" x2="105" y2="12" />
+            <circle cx="130" cy="12" r="5" />
+            <line x1="155" y1="12" x2="260" y2="12" />
+        </svg>
+    </div>
+
+        <section>
+            <h3>São Pedro nas Sagradas Escrituras</h3>
+<p>Os Evangelhos narram sua vocação junto ao lago de Genesaré, sua confissão de fé em Cesareia de Filipe — "Tu és o Cristo, o Filho do Deus vivo" — e também suas fraquezas, como a tríplice negação na noite da Paixão.</p><p>Após a Ressurreição, Pedro assume a liderança da comunidade cristã nascente, como relatam os Atos dos Apóstolos, e, segundo a tradição, foi martirizado em Roma sob o imperador Nero.</p>
+        </section>
+
+        <details class="prayer-card">
+            <summary>
+                <span class="prayer-icon" aria-hidden="true">+</span>
+                <span class="prayer-title">Oração a São Pedro</span>
+            </summary>
+            <div class="prayer-text">
+<p>Ó glorioso São Pedro, que recebestes de Cristo as chaves do Reino dos Céus e a missão de apascentar o Seu rebanho, alcançai-nos a graça de uma fé firme e constante, capaz de resistir às provações. Ajudai-nos a amar a Igreja como vós a amastes, e a segui-la com humildade e confiança.</p><p>Amém.</p>
+            </div>
+        </details>
+
+    </article>
+
+    <div class="divider">
+        <svg viewBox="0 0 260 24" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="12" x2="105" y2="12" />
+            <circle cx="130" cy="12" r="5" />
+            <line x1="155" y1="12" x2="260" y2="12" />
+        </svg>
+    </div>
+
+    <article class="saint-article" id="sao-paulo">
+
+        <p class="breadcrumb"><a href="#topo">&uarr; Vida dos Santos</a></p>
+
+        <div class="saint-hero">
+            <div class="saint-portrait-frame">
+                <img class="saint-portrait" src="https://commons.wikimedia.org/wiki/Special:FilePath/El_Greco_-_Apostle_St_Paul_-_WGA10603.jpg?width=600" alt="O Apóstolo São Paulo, pintura de El Greco" loading="lazy">
+            </div>
+            <div class="saint-hero-text">
+                <h2>São Paulo</h2>
+                <div class="saint-tags">
+                <span class="saint-tag">Apóstolo dos Gentios</span>
+                <span class="saint-tag">Doutor das Nações</span>
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <h3>Quem é São Paulo</h3>
+<p class="drop-cap">Saulo de Tarso era um fariseu culto e zeloso que perseguia os primeiros cristãos, até ser derrubado por uma visão de Cristo no caminho de Damasco. Batizado como Paulo, tornou-se o maior missionário do Evangelho entre os povos não judeus.</p>
+        </section>
+
+        <div class="divider">
+        <svg viewBox="0 0 260 24" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="12" x2="105" y2="12" />
+            <circle cx="130" cy="12" r="5" />
+            <line x1="155" y1="12" x2="260" y2="12" />
+        </svg>
+    </div>
+
+        <section>
+            <h3>São Paulo nas Sagradas Escrituras</h3>
+<p>Os Atos dos Apóstolos narram sua conversão e suas viagens missionárias pelo Mediterrâneo, fundando comunidades cristãs em cidades como Corinto, Éfeso e Filipos.</p><p>Suas cartas — a Romanos, Coríntios, Gálatas e tantas outras — formam parte essencial do Novo Testamento e continuam a moldar a doutrina cristã sobre a graça, a fé e a caridade. Segundo a tradição, foi martirizado em Roma, decapitado por ser cidadão romano.</p>
+        </section>
+
+        <details class="prayer-card">
+            <summary>
+                <span class="prayer-icon" aria-hidden="true">+</span>
+                <span class="prayer-title">Oração a São Paulo</span>
+            </summary>
+            <div class="prayer-text">
+<p>Ó glorioso Apóstolo São Paulo, vaso de eleição que levastes o nome de Cristo diante dos povos e dos reis, alcançai-nos um pouco do vosso zelo pela verdade e do vosso ardor pela salvação das almas. Ensinai-nos a dizer, como vós, que nada nos poderá separar do amor de Cristo.</p><p>Amém.</p>
+            </div>
+        </details>
+
+    </article>
+
+    <div class="divider">
+        <svg viewBox="0 0 260 24" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="12" x2="105" y2="12" />
+            <circle cx="130" cy="12" r="5" />
+            <line x1="155" y1="12" x2="260" y2="12" />
+        </svg>
+    </div>
+
+    <article class="saint-article" id="santo-antonio-de-padua">
+
+        <p class="breadcrumb"><a href="#topo">&uarr; Vida dos Santos</a></p>
+
+        <div class="saint-hero">
+            <div class="saint-portrait-frame">
+                <img class="saint-portrait" src="https://commons.wikimedia.org/wiki/Special:FilePath/Heiliger_Antonius_mit_dem_Christuskind.jpg?width=600" alt="Santo Antônio de Pádua com o Menino Jesus" loading="lazy">
+            </div>
+            <div class="saint-hero-text">
+                <h2>Santo Antônio de Pádua</h2>
+                <div class="saint-tags">
+                <span class="saint-tag">Doutor da Igreja</span>
+                <span class="saint-tag">Padroeiro dos casamenteiros e das causas perdidas</span>
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <h3>Quem é Santo Antônio</h3>
+<p class="drop-cap">Nascido em Lisboa e falecido perto de Pádua, na Itália, Antônio foi cônego agostiniano antes de ingressar na jovem Ordem Franciscana. Tornou-se um dos maiores pregadores de seu tempo, conhecido pela profundidade bíblica e pela caridade com os pobres.</p>
+        </section>
+
+        <div class="divider">
+        <svg viewBox="0 0 260 24" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="12" x2="105" y2="12" />
+            <circle cx="130" cy="12" r="5" />
+            <line x1="155" y1="12" x2="260" y2="12" />
+        </svg>
+    </div>
+
+        <section>
+            <h3>Vida e devoção</h3>
+<p>Antônio ensinou teologia por pedido do próprio São Francisco de Assis e percorreu cidades da Itália e do sul da França pregando com tal eloquência que era chamado de "Martelo dos Hereges". Morreu aos 36 anos, em 1231, e foi canonizado menos de um ano depois.</p><p>A devoção popular o invoca como intercessor para encontrar objetos perdidos, para causas difíceis e, no Brasil, como padroeiro dos noivados e casamentos.</p>
+        </section>
+
+        <details class="prayer-card">
+            <summary>
+                <span class="prayer-icon" aria-hidden="true">+</span>
+                <span class="prayer-title">Oração a Santo Antônio</span>
+            </summary>
+            <div class="prayer-text">
+<p>Ó glorioso Santo Antônio, que tanta ternura tínheis pelo Menino Jesus, alcançai-nos a graça de O buscarmos e amarmos como vós O buscastes e amastes. Sede nosso advogado nas dificuldades, socorrei os que sofrem e ajudai-nos a encontrar aquilo que perdemos, sobretudo a paz da alma.</p><p>Amém.</p>
+            </div>
+        </details>
+
+    </article>
+
+    <div class="divider">
+        <svg viewBox="0 0 260 24" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="12" x2="105" y2="12" />
+            <circle cx="130" cy="12" r="5" />
+            <line x1="155" y1="12" x2="260" y2="12" />
+        </svg>
+    </div>
+
+    <article class="saint-article" id="sao-francisco-de-assis">
+
+        <p class="breadcrumb"><a href="#topo">&uarr; Vida dos Santos</a></p>
+
+        <div class="saint-hero">
+            <div class="saint-portrait-frame">
+                <img class="saint-portrait" src="https://commons.wikimedia.org/wiki/Special:FilePath/El_Greco_-_Saint_Francis_in_ecstasy_-_Google_Art_Project.jpg?width=600" alt="São Francisco de Assis em êxtase, pintura de El Greco" loading="lazy">
+            </div>
+            <div class="saint-hero-text">
+                <h2>São Francisco de Assis</h2>
+                <div class="saint-tags">
+                <span class="saint-tag">Fundador dos Franciscanos</span>
+                <span class="saint-tag">Padroeiro da ecologia</span>
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <h3>Quem é São Francisco</h3>
+<p class="drop-cap">Filho de um próspero mercador de tecidos de Assis, na Úmbria, Francisco viveu a juventude entre festas e sonhos de cavalaria, até que uma conversão radical o levou a abraçar a pobreza extrema como caminho para seguir Cristo.</p>
+        </section>
+
+        <div class="divider">
+        <svg viewBox="0 0 260 24" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="12" x2="105" y2="12" />
+            <circle cx="130" cy="12" r="5" />
+            <line x1="155" y1="12" x2="260" y2="12" />
+        </svg>
+    </div>
+
+        <section>
+            <h3>Vida e devoção</h3>
+<p>Fundou a Ordem dos Frades Menores, reunindo companheiros que, como ele, renunciaram aos bens para viver do trabalho e da esmola, pregando penitência e paz. É célebre também o Cântico das Criaturas, em que louva a Deus através do sol, da lua, da água e da própria morte, chamada de "irmã".</p><p>Dois anos antes de morrer, recebeu em seu corpo os estigmas da Paixão de Cristo, no Monte Alverne. É hoje padroeiro da Itália e, por seu amor à criação, padroeiro da ecologia.</p>
+        </section>
+
+        <details class="prayer-card">
+            <summary>
+                <span class="prayer-icon" aria-hidden="true">+</span>
+                <span class="prayer-title">Oração Simples de São Francisco</span>
+            </summary>
+            <div class="prayer-text">
+<p>Senhor, fazei-me instrumento de vossa paz. Onde houver ódio, que eu leve o amor; onde houver ofensa, que eu leve o perdão; onde houver discórdia, que eu leve a união; onde houver dúvida, que eu leve a fé; onde houver erro, que eu leve a verdade; onde houver desespero, que eu leve a esperança; onde houver tristeza, que eu leve a alegria; onde houver trevas, que eu leve a luz.</p><p>Amém.</p>
+            </div>
+        </details>
+
+    </article>
+
+    <div class="divider">
+        <svg viewBox="0 0 260 24" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="12" x2="105" y2="12" />
+            <circle cx="130" cy="12" r="5" />
+            <line x1="155" y1="12" x2="260" y2="12" />
+        </svg>
+    </div>
+
+    <article class="saint-article" id="santa-teresinha-do-menino-jesus">
+
+        <p class="breadcrumb"><a href="#topo">&uarr; Vida dos Santos</a></p>
+
+        <div class="saint-hero">
+            <div class="saint-portrait-frame">
+                <img class="saint-portrait" src="https://commons.wikimedia.org/wiki/Special:FilePath/Sainte_therese_de_lisieux.jpg?width=600" alt="Santa Teresa de Lisieux, fotografia de época" loading="lazy">
+            </div>
+            <div class="saint-hero-text">
+                <h2>Santa Teresinha do Menino Jesus</h2>
+                <div class="saint-tags">
+                <span class="saint-tag">Doutora da Igreja</span>
+                <span class="saint-tag">Padroeira das missões</span>
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <h3>Quem é Santa Teresinha</h3>
+<p class="drop-cap">Teresa Martin nasceu em Alençon, na França, e entrou ainda adolescente no Carmelo de Lisieux, onde viveu escondida do mundo até morrer de tuberculose aos 24 anos, em 1897.</p>
+        </section>
+
+        <div class="divider">
+        <svg viewBox="0 0 260 24" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="12" x2="105" y2="12" />
+            <circle cx="130" cy="12" r="5" />
+            <line x1="155" y1="12" x2="260" y2="12" />
+        </svg>
+    </div>
+
+        <section>
+            <h3>A pequena via</h3>
+<p>Sem grandes feitos exteriores, Teresinha propôs à espiritualidade cristã a chamada "pequena via": alcançar a santidade não por façanhas extraordinárias, mas pela confiança total em Deus e pelo amor vivido nos gestos mais simples do cotidiano.</p><p>Sua autobiografia espiritual, Manuscrito Autobiográfico, tornou-se um dos textos mais lidos da espiritualidade católica. Foi declarada Doutora da Igreja em 1997 e é padroeira das missões, apesar de nunca ter saído do convento.</p>
+        </section>
+
+        <details class="prayer-card">
+            <summary>
+                <span class="prayer-icon" aria-hidden="true">+</span>
+                <span class="prayer-title">Oração a Santa Teresinha</span>
+            </summary>
+            <div class="prayer-text">
+<p>Ó Santa Teresinha do Menino Jesus, que ensinastes ser possível chegar à santidade pelos pequenos gestos de amor de cada dia, alcançai-nos a graça de confiar em Deus como uma criança confia no Pai. Ensinai-nos a oferecer as pequenas coisas da nossa vida com grande amor.</p><p>Amém.</p>
+            </div>
+        </details>
+
+    </article>
+
+    <div class="divider">
+        <svg viewBox="0 0 260 24" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="12" x2="105" y2="12" />
+            <circle cx="130" cy="12" r="5" />
+            <line x1="155" y1="12" x2="260" y2="12" />
+        </svg>
+    </div>
+
+    <article class="saint-article" id="sao-judas-tadeu">
+
+        <p class="breadcrumb"><a href="#topo">&uarr; Vida dos Santos</a></p>
+
+        <div class="saint-hero">
+            <div class="saint-portrait-frame">
+                <img class="saint-portrait" src="https://commons.wikimedia.org/wiki/Special:FilePath/El_Greco_-_Apostle_St_Thaddeus_(Jude)_-_WGA10601.jpg?width=600" alt="O Apóstolo São Judas Tadeu, pintura de El Greco" loading="lazy">
+            </div>
+            <div class="saint-hero-text">
+                <h2>São Judas Tadeu</h2>
+                <div class="saint-tags">
+                <span class="saint-tag">Apóstolo</span>
+                <span class="saint-tag">Padroeiro das causas difíceis e impossíveis</span>
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <h3>Quem é São Judas Tadeu</h3>
+<p class="drop-cap">Judas Tadeu foi um dos Doze Apóstolos escolhidos por Jesus, muitas vezes identificado nos Evangelhos também pelo nome de Tadeu, para distingui-lo de Judas Iscariotes.</p>
+        </section>
+
+        <div class="divider">
+        <svg viewBox="0 0 260 24" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="12" x2="105" y2="12" />
+            <circle cx="130" cy="12" r="5" />
+            <line x1="155" y1="12" x2="260" y2="12" />
+        </svg>
+    </div>
+
+        <section>
+            <h3>São Judas nas Sagradas Escrituras e na devoção</h3>
+<p>O Evangelho de João registra uma pergunta sua a Jesus na Última Ceia, sobre por que Ele se manifestaria aos discípulos e não ao mundo. A tradição atribui-lhe também a Carta de São Judas, breve exortação à fidelidade da fé.</p><p>Depois de Pentecostes, teria pregado o Evangelho na Mesopotâmia e na Pérsia, onde sofreu o martírio. Tornou-se, ao longo dos séculos, um dos santos mais populares, invocado especialmente nas causas mais difíceis e aparentemente sem solução.</p>
+        </section>
+
+        <details class="prayer-card">
+            <summary>
+                <span class="prayer-icon" aria-hidden="true">+</span>
+                <span class="prayer-title">Oração a São Judas Tadeu</span>
+            </summary>
+            <div class="prayer-text">
+<p>Glorioso Apóstolo São Judas Tadeu, servo fiel e amigo de Jesus, o nome do traidor tem sido causa de serdes esquecido por muitos, mas a Igreja vos honra e invoca universalmente como o santo das causas difíceis e das coisas quase desesperadas. Rogai por mim, que sou tão miserável, e usai, eu vos peço, o poder especial que vos foi dado de trazer visível e imediato auxílio onde quase se perdeu toda a esperança.</p><p>Amém.</p>
+            </div>
+        </details>
+
+    </article>
+
+    <div class="divider">
+        <svg viewBox="0 0 260 24" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="12" x2="105" y2="12" />
+            <circle cx="130" cy="12" r="5" />
+            <line x1="155" y1="12" x2="260" y2="12" />
+        </svg>
+    </div>
+
+    <article class="saint-article" id="santa-rita-de-cassia">
+
+        <p class="breadcrumb"><a href="#topo">&uarr; Vida dos Santos</a></p>
+
+        <div class="saint-hero">
+            <div class="saint-portrait-frame">
+                <img class="saint-portrait" src="https://commons.wikimedia.org/wiki/Special:FilePath/Santa_Rita_da_Cascia.jpg?width=600" alt="Santa Rita de Cássia, pintura tradicional" loading="lazy">
+            </div>
+            <div class="saint-hero-text">
+                <h2>Santa Rita de Cássia</h2>
+                <div class="saint-tags">
+                <span class="saint-tag">Santa dos casos impossíveis</span>
+                <span class="saint-tag">Padroeira das causas difíceis</span>
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <h3>Quem é Santa Rita</h3>
+<p class="drop-cap">Nascida perto de Cássia, na Itália, Rita foi casada ainda jovem, contra sua vontade de vida religiosa, com um homem violento que veio a ser assassinado. Perdeu também os dois filhos antes de finalmente entrar no convento agostiniano.</p>
+        </section>
+
+        <div class="divider">
+        <svg viewBox="0 0 260 24" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="12" x2="105" y2="12" />
+            <circle cx="130" cy="12" r="5" />
+            <line x1="155" y1="12" x2="260" y2="12" />
+        </svg>
+    </div>
+
+        <section>
+            <h3>Vida e devoção</h3>
+<p>Já religiosa, Rita viveu décadas de intensa vida de oração e penitência, marcada nos últimos anos por um ferimento na testa, semelhante a um espinho da coroa de Cristo, que ela interpretou como sinal de graça.</p><p>Por ter atravessado sofrimentos conjugais, a perda dos filhos e situações aparentemente sem saída, tornou-se conhecida como "santa dos casos impossíveis", muito invocada por quem enfrenta dificuldades familiares e conjugais.</p>
+        </section>
+
+        <details class="prayer-card">
+            <summary>
+                <span class="prayer-icon" aria-hidden="true">+</span>
+                <span class="prayer-title">Oração a Santa Rita</span>
+            </summary>
+            <div class="prayer-text">
+<p>Ó Santa Rita, que experimentastes as dores do casamento difícil, da viuvez e da perda dos filhos, e ainda assim perseverastes na fé e no perdão, alcançai-nos a graça de não desanimar diante das provações. Ensinai-nos a confiar em Deus mesmo quando tudo parece impossível.</p><p>Amém.</p>
+            </div>
+        </details>
+
+    </article>
+
+    <div class="divider">
+        <svg viewBox="0 0 260 24" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="12" x2="105" y2="12" />
+            <circle cx="130" cy="12" r="5" />
+            <line x1="155" y1="12" x2="260" y2="12" />
+        </svg>
+    </div>
+
+    <article class="saint-article" id="sao-jorge">
+
+        <p class="breadcrumb"><a href="#topo">&uarr; Vida dos Santos</a></p>
+
+        <div class="saint-hero">
+            <div class="saint-portrait-frame">
+                <img class="saint-portrait" src="https://commons.wikimedia.org/wiki/Special:FilePath/Raphael_-_Saint_George_Fighting_the_Dragon.jpg?width=600" alt="São Jorge e o dragão, pintura de Rafael" loading="lazy">
+            </div>
+            <div class="saint-hero-text">
+                <h2>São Jorge</h2>
+                <div class="saint-tags">
+                <span class="saint-tag">Mártir</span>
+                <span class="saint-tag">Padroeiro dos soldados</span>
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <h3>Quem é São Jorge</h3>
+<p class="drop-cap">Jorge foi, segundo a tradição, um soldado do exército romano na virada do século III para o IV, que preferiu confessar publicamente a fé cristã a permanecer em silêncio diante da perseguição do imperador Diocleciano, sendo martirizado por isso.</p>
+        </section>
+
+        <div class="divider">
+        <svg viewBox="0 0 260 24" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="12" x2="105" y2="12" />
+            <circle cx="130" cy="12" r="5" />
+            <line x1="155" y1="12" x2="260" y2="12" />
+        </svg>
+    </div>
+
+        <section>
+            <h3>A lenda e a devoção</h3>
+<p>A conhecida imagem de São Jorge vencendo um dragão é uma narrativa simbólica posterior, que representa a vitória da fé e da coragem sobre o mal, e não um episódio histórico registrado em seu tempo.</p><p>Padroeiro de soldados e de diversas nações e cidades, é uma das devoções mais populares do Brasil, especialmente no Rio de Janeiro, onde é celebrado como símbolo de proteção e coragem diante das lutas do dia a dia.</p>
+        </section>
+
+        <details class="prayer-card">
+            <summary>
+                <span class="prayer-icon" aria-hidden="true">+</span>
+                <span class="prayer-title">Oração a São Jorge</span>
+            </summary>
+            <div class="prayer-text">
+<p>Bendito e louvado seja Deus, que vos concedeu, glorioso São Jorge, tamanha fé e coragem para confessardes o nome de Cristo até o martírio. Alcançai-nos a mesma fortaleza para enfrentarmos as lutas de cada dia e a coragem para sermos fiéis à nossa fé em todas as circunstâncias.</p><p>Amém.</p>
+            </div>
+        </details>
+
+    </article>
+
 </main>
 
-
-
-
-
-
-
-
-
-
-
-
-
+<footer>
+    Vox Ecclesiae &mdash; Ad Maiorem Dei Gloriam
+</footer>
 
 </body>
 
